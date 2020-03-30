@@ -1,0 +1,17 @@
+runtime: custom
+env: flex
+service: quotes
+
+runtime_config:  # Optional
+  jdk: openjdk8
+
+handlers:
+- url: /.*
+  script: this field is required, but ignored
+
+manual_scaling:
+  instances: 1
+
+network:
+  name: projects/<host-project-id>/global/networks/<vpc-name>
+  subnetwork_name: <subnet-name>
